@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Trayectoria profesional de Johanna Caridi | HR Business Partner con 15+ años en minería, tecnología y consultoría."/>
+  <meta name="theme-color" content="#0a0a0a"/>
+  <title>Trayectoria | Johanna Caridi</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --black: #0a0a0a;
+      --black-light: #111111;
+      --gray-dark: #1a1a1a;
+      --gray: #888888;
+      --gray-light: #aaaaaa;
+      --white: #ffffff;
+      --gold: #c9a961;
+      --transition: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--black);
+      color: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 4vw; }
+    .section { padding: 8rem 0 4rem; }
+    
+    /* Header */
+    header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 1.5rem 0; mix-blend-mode: difference; }
+    header.scrolled { padding: 1rem 0; background: rgba(10,10,10,0.95); mix-blend-mode: normal; backdrop-filter: blur(10px); }
+    nav { display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-size: 1.2rem; font-weight: 700; letter-spacing: -0.02em; }
+    .nav-links { display: flex; gap: 2.5rem; align-items: center; }
+    .nav-links a { font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; color: var(--white); position: relative; }
+    .nav-links a.active { color: var(--gold); }
+    .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px; background: var(--gold); transition: width 0.3s var(--transition); }
+    .nav-links a:hover::after { width: 100%; }
+    .mobile-toggle { display: none; font-size: 1.5rem; cursor: pointer; color: var(--white); }
+    
+    /* Page Hero */
+    .page-hero {
+      padding-top: 12rem;
+      padding-bottom: 4rem;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .page-hero h1 {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.5rem;
+    }
+    .page-hero p {
+      font-size: 1.15rem;
+      color: var(--gray);
+      max-width: 650px;
+      line-height: 1.7;
+    }
+    
+    /* Timeline */
+    .timeline { display: flex; flex-direction: column; gap: 3.5rem; }
+    .timeline-item { position: relative; padding-left: 2.5rem; border-left: 1px solid rgba(201,169,97,0.2); }
+    .timeline-item::before {
+      content: ''; position: absolute; left: -5px; top: 6px;
+      width: 9px; height: 9px; background: var(--gold); border-radius: 50%;
+      box-shadow: 0 0 0 4px var(--black);
+    }
+    .timeline-date { font-size: 0.8rem; color: var(--gold); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.4rem; display: block; }
+    .timeline-title { font-size: 1.6rem; font-weight: 700; margin-bottom: 0.3rem; }
+    .timeline-company { font-size: 0.95rem; color: var(--gray-light); margin-bottom: 1.2rem; display: block; }
+    .timeline-item ul { list-style: none; }
+    .timeline-item li {
+      font-size: 0.95rem; color: var(--gray-light); margin-bottom: 0.6rem;
+      padding-left: 1.2rem; position: relative; line-height: 1.65;
+    }
+    .timeline-item li::before { content: '›'; position: absolute; left: 0; color: var(--gold); font-weight: bold; }
+    
+    /* Skills & Certs Grid */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 2rem; }
+    .col h3 { font-size: 1.4rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--gold); }
+    .tag-list { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+    .tag {
+      background: var(--gray-dark); padding: 0.5rem 1rem; border-radius: 4px;
+      font-size: 0.85rem; color: var(--gray-light); border: 1px solid rgba(255,255,255,0.05);
+    }
+    .cert-item { margin-bottom: 1rem; }
+    .cert-item strong { color: var(--white); display: block; margin-bottom: 0.2rem; }
+    .cert-item span { font-size: 0.85rem; color: var(--gray); }
+    
+    /* Footer */
+    footer { padding: 3rem 0; border-top: 1px solid rgba(255,255,255,0.08); text-align: center; color: var(--gray); font-size: 0.85rem; }
+    
+    /* Responsive */
+    @media (max-width: 900px) {
+      .two-col { grid-template-columns: 1fr; gap: 2.5rem; }
+      .nav-links { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: var(--black); flex-direction: column; justify-content: center; gap: 2rem; }
+      .nav-links.active { display: flex; }
+      .mobile-toggle { display: block; z-index: 1001; }
+      .section { padding: 5rem 0 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header id="header">
+    <div class="container">
+      <nav>
+        <div class="logo">JOHANNA CARIDI</div>
+        <div class="nav-links" id="navLinks">
+          <a href="index.html">Inicio</a>
+          <a href="trayectoria.html" class="active">Trayectoria</a>
+          <a href="index.html#expertise">Expertise</a>
+          <a href="index.html#impact">Impacto</a>
+          <a href="index.html#contact">Contacto</a>
+        </div>
+        <div class="mobile-toggle" id="mobileToggle">☰</div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <span style="color:var(--gold); text-transform:uppercase; letter-spacing:0.15em; font-size:0.85rem; font-weight:600;">Currículum Vitae</span>
+        <h1>Trayectoria<br>Profesional</h1>
+        <p>Psicóloga Organizacional con más de 15 años liderando estrategias de Atracción de Talento, Desarrollo Organizacional y Automatización HR en sectores de alta complejidad: minería, tecnología, ingeniería y consultoría regional.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 style="font-size:1.8rem; margin-bottom:2rem; font-weight:700;">Experiencia Ejecutiva</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <span class="timeline-date">May 2025 — Presente</span>
+            <h3 class="timeline-title">Coordinadora de Atracción de Talento</h3>
+            <span class="timeline-company">Gestiona Consultores SPA | Chile / Perú</span>
+            <ul>
+              <li>Diseño del área de Talento desde cero con procesos ISO 9001 y automatización con IA.</li>
+              <li>Selección de perfiles técnicos especializados para minería, energía y medioambiente.</li>
+              <li>Estructuración de 145 cargos con Hay Group y bandas salariales competitivas.</li>
+              <li>Fortalecimiento de marca empleadora y programas trainee.</li>
+            </ul>
+          </div>
+          
+          <div class="timeline-item">
+            <span class="timeline-date">Sep 2023 — May 2025</span>
+            <h3 class="timeline-title">Jefa de Atracción de Talento y DO</h3>
+            <span class="timeline-company">STRACON Tech | Chile / Perú</span>
+            <ul>
+              <li>Certificación ISO 9001 con 0 no conformidades en integración post-adquisición.</li>
+              <li>Onboarding automatizado con IA: 50% reducción en tiempo y costo operativo.</li>
+              <li>Academia STRACON Tech para desarrollo de competencias y planes de carrera.</li>
+              <li>Cumplimiento consistente de curvas de contratación en proyectos mineros críticos.</li>
+            </ul>
+          </div>
+          
+          <div class="timeline-item">
+            <span class="timeline-date">Jun 2022 — Sep 2023</span>
+            <h3 class="timeline-title">Líder de Atracción de Talento y DO</h3>
+            <span class="timeline-company">Constructora Excon | Chile</span>
+            <ul>
+              <li>Gestión de nómina de 3.500 colaboradores del sector minero.</li>
+              <li>Optimización de costos operativos en 30% mediante planes de atracción estratégicos.</li>
+              <li>Proyectos: Quebrada Blanca, Escondida, Collahuasi, Centinela, Toconao.</li>
+              <li>Diseño de programas de evaluación de desempeño para jefaturas.</li>
+            </ul>
+          </div>
+          
+          <div class="timeline-item">
+            <span class="timeline-date">Feb 2012 — Feb 2022</span>
+            <h3 class="timeline-title">Jefa de Selección y Desarrollo Organizacional</h3>
+            <span class="timeline-company">Sociedad Educacional J.I y S.C Limitada | Chile</span>
+            <ul>
+              <li>Reducción del 30% en rotación mediante estrategias integrales de retención.</li>
+              <li>Implementación de modelos de evaluación de desempeño y planes de sucesión.</li>
+              <li>Liderazgo en relaciones laborales y negociaciones colectivas.</li>
+              <li>Certificación ISO 9001 con 0 no conformidades en RRHH.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background:var(--black-light);">
+      <div class="container">
+        <div class="two-col">
+          <div>
+            <h3>Competencias & Herramientas</h3>
+            <div class="tag-list">
+              <span class="tag">Talent Acquisition</span>
+              <span class="tag">Desarrollo Organizacional</span>
+              <span class="tag">People Analytics</span>
+              <span class="tag">ISO 9001</span>
+              <span class="tag">Hay Group Methodology</span>
+              <span class="tag">DISC & STAR</span>
+              <span class="tag">Buk / Talana / ATS</span>
+              <span class="tag">Automatización HR con IA</span>
+              <span class="tag">Negociación Colectiva</span>
+              <span class="tag">Employer Branding</span>
+            </div>
+            
+            <h3 style="margin-top:2.5rem;">Formación Académica</h3>
+            <div class="cert-item">
+              <strong>Psicología (Mención Laboral)</strong>
+              <span>Universidad SEK Chile | 2009</span>
+            </div>
+            <div class="cert-item">
+              <strong>Diplomado en Relaciones Laborales</strong>
+              <span>AIEP | 2023</span>
+            </div>
+          </div>
+          
+          <div>
+            <h3>Certificaciones Profesionales</h3>
+            <div class="cert-item">
+              <strong>Entrevista por Competencias Modelo STAR</strong>
+              <span>ADIPA | 2025</span>
+            </div>
+            <div class="cert-item">
+              <strong>Test de Zulliger: Aplicación e Informes</strong>
+              <span>ADIPA | 2024</span>
+            </div>
+            <div class="cert-item">
+              <strong>Grafología Aplicada a Contextos Laborales</strong>
+              <span>Instituto de Grafología | 2024</span>
+            </div>
+            <div class="cert-item">
+              <strong>Metodología DISC</strong>
+              <span>ADIPA | 2025</span>
+            </div>
+            
+            <h3 style="margin-top:2.5rem;">Sectores de Experiencia</h3>
+            <div class="tag-list">
+              <span class="tag">Minería</span>
+              <span class="tag">Tecnología</span>
+              <span class="tag">Ingeniería</span>
+              <span class="tag">Consultoría</span>
+              <span class="tag">Energía</span>
+              <span class="tag">Educación</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 Johanna Caridi. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', () => {
+      document.getElementById('header').classList.toggle('scrolled', window.scrollY > 50);
+    });
+    const mobileToggle = document.getElementById('mobileToggle');
+    const navLinks = document.getElementById('navLinks');
+    mobileToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      mobileToggle.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
+    });
+    document.querySelectorAll('.nav-links a').forEach(l => l.addEventListener('click', () => {
+      navLinks.classList.remove('active');
+      mobileToggle.textContent = '';
+    }));
+  </script>
+</body>
+</html>
