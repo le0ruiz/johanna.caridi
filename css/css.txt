@@ -1,0 +1,87 @@
+/* ===== PERFIL DE IMAGEN OPTIMIZADO PARA FOTO OSCURA ===== */
+.profile-img-container {
+  position: relative;
+  width: 240px;
+  height: 240px;
+  margin: 0 auto 2.5rem;
+}
+
+.profile-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 25%; /*  Ajusta esto si el rostro queda muy arriba/abajo */
+  border: 3px solid var(--accent);
+  box-shadow:
+    0 0 0 6px rgba(15, 20, 33, 0.9),   /* Anillo oscuro interno (crea contraste con el fondo) */
+    0 12px 40px rgba(0, 0, 0, 0.65),    /* Sombra de profundidad */
+    0 0 25px rgba(201, 169, 97, 0.25);  /* Brillo dorado sutil */
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  background: var(--bg-secondary);
+}
+
+.profile-img:hover {
+  transform: scale(1.04) translateY(-4px);
+  box-shadow:
+    0 0 0 6px rgba(15, 20, 33, 0.95),
+    0 20px 60px rgba(0, 0, 0, 0.75),
+    0 0 45px rgba(201, 169, 97, 0.4);
+}
+
+/* Badge de disponibilidad */
+.img-badge {
+  position: absolute;
+  bottom: 14px;
+  right: 14px;
+  background: var(--success);
+  color: var(--bg-primary);
+  padding: 0.35rem 0.75rem;
+  border-radius: 50px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+  border: 2px solid var(--bg-primary);
+  z-index: 2;
+  letter-spacing: 0.02em;
+}
+
+/* Placeholder (por si aún no carga la imagen) */
+.profile-img-placeholder {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--bg-secondary), var(--bg-card));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.5rem;
+  color: var(--accent);
+  border: 3px solid var(--border);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .profile-img-container {
+    width: 180px;
+    height: 180px;
+    margin-bottom: 2rem;
+  }
+  .profile-img {
+    border-width: 2px;
+    box-shadow:
+      0 0 0 4px rgba(15, 20, 33, 0.9),
+      0 8px 30px rgba(0, 0, 0, 0.6),
+      0 0 20px rgba(201, 169, 97, 0.2);
+  }
+  .img-badge {
+    bottom: 8px;
+    right: 8px;
+    padding: 0.25rem 0.6rem;
+    font-size: 0.65rem;
+  }
+}
